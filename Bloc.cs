@@ -1,8 +1,6 @@
-﻿/*
-Entreprise : ETML
-Auteur : Christopher Ristic 
-Date : 28.03.2025
-*/
+﻿///Entreprise : ETML
+///Auteur : Christopher Ristic 
+///Date : 28.03.2025
 
 namespace Blockchain
 {
