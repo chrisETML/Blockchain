@@ -19,7 +19,7 @@ namespace Blockchain
         /// <summary>
         /// 
         /// </summary>
-        public Bloc Next { get; private set; } = null;
+        public Bloc Next { get; set; } = null;
 
         /// <summary>
         /// Hash du bloc

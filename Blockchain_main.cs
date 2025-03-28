@@ -5,10 +5,6 @@ Date : 28.03.2025
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blockchain
 {
@@ -19,7 +15,14 @@ namespace Blockchain
         /// </summary>
         static void Main()
         {
-            Bloc bloc = new Bloc("Transaction 1 : Alice envoie 10 à Bob");
+
+            Blockchain blockchain = new Blockchain();
+
+            blockchain.AjouterBloc("Bob envoie 5 à Charlie");
+            blockchain.AjouterBloc("Alice envoie 10 à Bob");
+
+            blockchain.Afficher();
+
 
         }
     }
