@@ -1,36 +1,35 @@
-﻿///Entreprise : ETML
+﻿
+using System.Security.Cryptography;
+using System.Text;
+
+using System;
+///Entreprise : ETML
 ///Auteur : Christopher Ristic 
 ///Date : 28.03.2025
 
 namespace Blockchain
 {
-    /// <summary>
-    /// Bloc pour la blockchain
-    /// </summary>
     internal class Bloc
     {
-        /// <summary>
-        /// Données du bloc
-        /// </summary>
         public string Data { get; private set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public Bloc Next { get; set; } = null;
-
-        /// <summary>
-        /// Hash du bloc
-        /// </summary>
+        public Bloc Precedent { get; set; } = null;
         public string Hash { get; private set; }
 
-        /// <summary>
-        /// Constructeur
-        /// </summary>
-        /// <param name="data">Donnée du bloc</param>
-        public Bloc(string data) 
+        public Bloc(string data)
         {
             Data = data;
+            Hash = CalculerHash();
+        }
+
+        private string CalculerHash()
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] dataBytes = Encoding.UTF8.GetBytes(Data);
+                byte[] hashBytes = sha256.ComputeHash(dataBytes);
+                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+            }
         }
     }
 }

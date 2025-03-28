@@ -13,12 +13,10 @@ namespace Blockchain
         {
 
             Blockchain blockchain = new Blockchain();
-
-            blockchain.AjouterBloc("Bob envoie 5 à Charlie");
-            blockchain.AjouterBloc("Alice envoie 10 à Bob");
-
+            blockchain.AjouterBloc("Transaction 1 : Alice envoie 10 à Bob");
+            blockchain.AjouterBloc("Transaction 2 : Bob envoie 5 à Charlie");
+            blockchain.AjouterBloc("Transaction 3 : Charlie envoie 2 à Dave");
             blockchain.Afficher();
-
 
         }
     }
