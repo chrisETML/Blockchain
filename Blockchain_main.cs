@@ -12,13 +12,15 @@ using System.Threading.Tasks;
 
 namespace Blockchain
 {
-    internal class Program
+    internal class Blockchain_main
     {
         /// <summary>
         /// Programme pour la blockchain
         /// </summary>
         static void Main()
         {
+            Bloc bloc = new Bloc("Transaction 1 : Alice envoie 10 à Bob");
+
         }
     }
 }
